@@ -1,0 +1,26 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+export default function Message({ from, message }) {
+  return (
+    <div>
+      <div className="message-data align-right">
+        <span className="message-data-time">{message.time}</span> &nbsp; &nbsp;
+        <span className="message-data-name">{from.name}</span>
+        <i class="fa fa-circle me"></i>
+      </div>
+      <div className="message other-message float-right">
+        {message?.text}
+      </div>
+    </div>
+  );
+}
+
+Message.propTypes = {
+  from: PropTypes.object,
+  message: PropTypes.object,
+};
+Message.defaultProps = {
+  from: {},
+  message: {},
+};
